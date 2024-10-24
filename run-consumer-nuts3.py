@@ -423,7 +423,7 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
                         for row in monica_io3.write_output(output_ids, results):
                             writer.writerow(row)
 
-                    writer.writerow([])
+                writer.writerow([])
 
             process_message.received_env_count = process_message.received_env_count + 1
 
