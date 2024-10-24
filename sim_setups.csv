@@ -39,5 +39,3 @@ run-id,use_vernalisation_fix,sowing-date,harvest-date,crop-id,sim.json,crop.json
 38,True,fixed,auto,WW_sfix_hauto,sim.json,crop.json,site.json,True,dwd_core_ensemble,dwd_core_ensemble/csvs_dwd_core_ensemble,MPI-M-MPI-ESM-LR,MPI-CSC-REMO2009,rcp85,r2i1p1,v1,2023-01-01,2081-12-31,False,False,True,True,True,False,False,True,False,False,False,False,False,,,1.0,165_225_395_180_330_25,prediction_runs,Sachsen
 39,True,fixed,auto,WW_sfix_hauto,sim.json,crop.json,site.json,True,dwd_core_ensemble,dwd_core_ensemble/csvs_dwd_core_ensemble,MPI-M-MPI-ESM-LR,UHOH-WRF361H,rcp85,r1i1p1,v1,2023-01-01,2081-12-31,False,False,True,True,True,False,False,True,False,True,False,False,False,,,1.0,165_225_395_180_330_25,prediction_runs,Sachsen
 40,True,fixed,auto,WW_sfix_hauto,sim.json,crop.json,site.json,True,dwd_core_ensemble,dwd_core_ensemble/csvs_dwd_core_ensemble,MPI-M-MPI-ESM-LR,UHOH-WRF361H,rcp85,r1i1p1,v1,2023-01-01,2081-12-31,False,False,True,True,True,False,False,True,False,False,False,False,False,,,1.0,165_225_395_180_330_25,prediction_runs,Sachsen
-
-
