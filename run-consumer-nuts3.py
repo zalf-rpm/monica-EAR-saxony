@@ -420,7 +420,13 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
                                                                        include_time_agg=False):
                             writer.writerow(row)
 
-                        for row in monica_io3.write_output(output_ids, results):
+                        # for row in monica_io3.write_output(output_ids, results):
+                        #     writer.writerow(row)
+                        for result in results:
+                            row = []
+                            for output_id in output_ids:
+                                field_name = output_id["name"]
+                                row.append(result.get(field_name, ""))
                             writer.writerow(row)
 
                 writer.writerow([])
