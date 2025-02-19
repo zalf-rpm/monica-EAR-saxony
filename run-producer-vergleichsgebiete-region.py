@@ -163,7 +163,7 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
         "start-row": "377",
         "end-row": "-1",
         "path_to_dem_grid": "",
-        "sim.json": "sim_projection_mdk.json",
+        "sim.json": "sim_projection_mdk_globrad.json",
         "crop.json": "crop.json",
         "site.json": "site.json",
         "setups-file": "sim_setups_mdk.csv",
