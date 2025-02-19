@@ -1,0 +1,85 @@
+vgl_nr,vg_name,gcm,rcm,path_to_latlon_id
+111,Dueben-Dahlener Heide,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-111-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+111,Dueben-Dahlener Heide,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-111-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+111,Dueben-Dahlener Heide,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-111-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+111,Dueben-Dahlener Heide,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-111-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+111,Dueben-Dahlener Heide,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-111-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+111,Dueben-Dahlener Heide,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-111-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+111,Dueben-Dahlener Heide,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-111-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+112,Lausitzer Heide- und Teichgebiet,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-112-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+112,Lausitzer Heide- und Teichgebiet,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-112-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+112,Lausitzer Heide- und Teichgebiet,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-112-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+112,Lausitzer Heide- und Teichgebiet,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-112-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+112,Lausitzer Heide- und Teichgebiet,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-112-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+112,Lausitzer Heide- und Teichgebiet,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-112-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+112,Lausitzer Heide- und Teichgebiet,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-112-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+221,Saechsische Elbtalniederung,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-221-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+221,Saechsische Elbtalniederung,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-221-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+221,Saechsische Elbtalniederung,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-221-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+221,Saechsische Elbtalniederung,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-221-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+221,Saechsische Elbtalniederung,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-221-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+221,Saechsische Elbtalniederung,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-221-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+221,Saechsische Elbtalniederung,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-221-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+222,Leipziger Tieflandsbucht,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-222-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+222,Leipziger Tieflandsbucht,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-222-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+222,Leipziger Tieflandsbucht,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-222-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+222,Leipziger Tieflandsbucht,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-222-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+222,Leipziger Tieflandsbucht,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-222-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+222,Leipziger Tieflandsbucht,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-222-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+222,Leipziger Tieflandsbucht,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-222-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+223,Mittelsaechsische Platte,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-223-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+223,Mittelsaechsische Platte,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-223-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+223,Mittelsaechsische Platte,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-223-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+223,Mittelsaechsische Platte,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-223-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+223,Mittelsaechsische Platte,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-223-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+223,Mittelsaechsische Platte,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-223-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+223,Mittelsaechsische Platte,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-223-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+224,Mittelsaechsisches Huegelland,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-224-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+224,Mittelsaechsisches Huegelland,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-224-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+224,Mittelsaechsisches Huegelland,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-224-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+224,Mittelsaechsisches Huegelland,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-224-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+224,Mittelsaechsisches Huegelland,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-224-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+224,Mittelsaechsisches Huegelland,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-224-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+224,Mittelsaechsisches Huegelland,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-224-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+231,Lausitzer Platte Zittauer Becken und Oberlausitzer Bergland,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-231-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+231,Lausitzer Platte Zittauer Becken und Oberlausitzer Bergland,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-231-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+231,Lausitzer Platte Zittauer Becken und Oberlausitzer Bergland,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-231-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+231,Lausitzer Platte Zittauer Becken und Oberlausitzer Bergland,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-231-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+231,Lausitzer Platte Zittauer Becken und Oberlausitzer Bergland,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-231-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+231,Lausitzer Platte Zittauer Becken und Oberlausitzer Bergland,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-231-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+231,Lausitzer Platte Zittauer Becken und Oberlausitzer Bergland,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-231-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+232,Elbsandsteingebirge und Zittauer Gebirge,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-232-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+232,Elbsandsteingebirge und Zittauer Gebirge,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-232-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+232,Elbsandsteingebirge und Zittauer Gebirge,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-232-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+232,Elbsandsteingebirge und Zittauer Gebirge,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-232-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+232,Elbsandsteingebirge und Zittauer Gebirge,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-232-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+232,Elbsandsteingebirge und Zittauer Gebirge,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-232-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+232,Elbsandsteingebirge und Zittauer Gebirge,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-232-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+341,Vogtland,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-341-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+341,Vogtland,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-341-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+341,Vogtland,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-341-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+341,Vogtland,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-341-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+341,Vogtland,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-341-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+341,Vogtland,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-341-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+341,Vogtland,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-341-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+342,Zwickau-Chemnitzer Huegelland,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-342-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+342,Zwickau-Chemnitzer Huegelland,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-342-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+342,Zwickau-Chemnitzer Huegelland,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-342-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+342,Zwickau-Chemnitzer Huegelland,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-342-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+342,Zwickau-Chemnitzer Huegelland,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-342-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+342,Zwickau-Chemnitzer Huegelland,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-342-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+342,Zwickau-Chemnitzer Huegelland,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-342-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+343,Noerdlliche Erzgebirgsabdachung,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-343-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+343,Noerdlliche Erzgebirgsabdachung,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-343-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+343,Noerdlliche Erzgebirgsabdachung,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-343-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+343,Noerdlliche Erzgebirgsabdachung,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-343-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+343,Noerdlliche Erzgebirgsabdachung,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-343-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+343,Noerdlliche Erzgebirgsabdachung,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-343-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+343,Noerdlliche Erzgebirgsabdachung,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-343-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
+351,Erzgebirgskamm,CCCma-CanESM2,DWD-EPISODES-2018-01,latlon-to-id-351-CCCma-CanESM2-DWD-EPISODES-2018-01.json
+351,Erzgebirgskamm,ICHEC-EC-EARTH,CEC-WETTREG2018,latlon-to-id-351-ICHEC-EC-EARTH-CEC-WETTREG2018.json
+351,Erzgebirgskamm,ICHEC-EC-EARTH,DWD-EPISODES-2018-01,latlon-to-id-351-ICHEC-EC-EARTH-DWD-EPISODES-2018-01.json
+351,Erzgebirgskamm,MIROC-MIROC5,CLMcom-CCLM4-8-17,latlon-to-id-351-MIROC-MIROC5-CLMcom-CCLM4-8-17.json
+351,Erzgebirgskamm,MOHC-HadGEM2-ES,CEC-WETTREG2018,latlon-to-id-351-MOHC-HadGEM2-ES-CEC-WETTREG2018.json
+351,Erzgebirgskamm,MOHC-HadGEM2-ES,KNMI-RACMO22E,latlon-to-id-351-MOHC-HadGEM2-ES-KNMI-RACMO22E.json
+351,Erzgebirgskamm,MPI-M-MPI-ESM_LR,DWD-EPISODES-2018-01,latlon-to-id-351-MPI-M-MPI-ESM_LR-DWD-EPISODES-2018-01.json
