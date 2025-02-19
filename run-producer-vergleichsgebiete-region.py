@@ -28,8 +28,8 @@ import zmq
 import geopandas as gpd
 import pandas as pd
 import rasterio
+import math
 from rasterio import features
-from haversine import haversine
 
 import monica_io3
 import soil_io3
@@ -103,6 +103,19 @@ DEBUG_ROWS = 10
 DEBUG_WRITE_FOLDER = "./debug_out"
 DEBUG_WRITE_CLIMATE = False
 
+def haversine_distance(coord1, coord2):
+    R = 6371.0
+
+    lat1, lon1 = map(math.radians, coord1)
+    lat2, lon2 = map(math.radians, coord2)
+
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    a = math.sin(dlat / 2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    return R * c  # distance in km
 
 def get_vg_climate_id(region_name, lat, lon, paths, gcm, rcm):
     interpolator_csv = "region_to_climate_interpolator.csv"
@@ -128,7 +141,8 @@ def get_vg_climate_id(region_name, lat, lon, paths, gcm, rcm):
         lat2, lon2 = coord
         climate_id = climate_id_list[0]
 
-        dist = haversine((lat, lon), (lat2, lon2))
+        # dist = haversine((lat, lon), (lat2, lon2))
+        dist = haversine_distance((lat, lon), (lat2, lon2))
 
         if dist < min_dist:
             min_dist = dist
