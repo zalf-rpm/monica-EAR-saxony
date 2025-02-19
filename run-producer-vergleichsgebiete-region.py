@@ -129,6 +129,8 @@ def get_vg_climate_id(region_name, lat, lon, paths, gcm, rcm):
     json_path = match.iloc[0]["path_to_latlon_id"]
 
     json_path = os.path.join(paths["path-to-climate-dir"], "mdk_ear_saxony", region_name, json_path)
+    # json_path = os.path.join(paths["path-to-data-dir"], "climate", "Mitteldeutsches Kernensemble", region_name,
+    #                          json_path)
 
     with open(json_path, "r") as f:
         latlon_to_id = json.load(f)
@@ -160,7 +162,7 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
         "mode": "re-local-remote",  # "mbm-local-remote",
         "server-port": server["port"] if server["port"] else "6667",
         "server": server["server"] if server["server"] else "login01.cluster.zalf.de",
-        "start-row": "377",
+        "start-row": "0",
         "end-row": "-1",
         "path_to_dem_grid": "",
         "sim.json": "sim_projection_mdk_globrad.json",
