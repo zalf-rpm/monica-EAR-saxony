@@ -90,12 +90,11 @@ TEMPLATE_PATH_LATLON = "data/climate/{region_name}/latlon-to-id-{region_name}-{r
 TEMPLATE_PATH_CLIMATE_CSV = "{region_name}/{gcm}/{rcm}/{scenario}/{ensmem}/{version}/{vg_climate_id}.csv"
 
 # Additional data for masking the regions
-VG_REGIONS = "data/germany/Vergleichsgebiete.shp"
+VG_REGIONS = "data/germany/Vergleichsgebiete_25832.shp"
 
 TEMPLATE_PATH_HARVEST = "{path_to_data_dir}/projects/monica-germany/ILR_SEED_HARVEST_doys_{crop_id}.csv"
 
 gdf = gpd.read_file(VG_REGIONS)
-gdf = gdf.to_crs("EPSG:25832")
 
 DEBUG_DONOT_SEND = False
 DEBUG_WRITE = False
