@@ -80,8 +80,8 @@ DATA_GRID_HEIGHT = "germany/dem_1000_25832_etrs89-utm32n.asc"
 DATA_GRID_SLOPE = "germany/slope_1000_25832_etrs89-utm32n.asc"
 DATA_GRID_LAND_USE = "germany/landuse_1000_31469_gk5.asc"
 DATA_GRID_SOIL = "germany/buek200_1000_25832_etrs89-utm32n.asc"
-DATA_GRID_CROPS = "germany/CM_2017-2019_WW_1000m_25832_q3.asc"  # winter wheat
-# DATA_GRID_CROPS = "germany/CM_2017-2019_SM_1000m_25832_q3.asc"  # silage maize
+# DATA_GRID_CROPS = "germany/CM_2017-2019_WW_1000m_25832_q3.asc"  # winter wheat
+DATA_GRID_CROPS = "germany/CM_2017-2019_SM_1000m_25832_q3.asc"  # silage maize
 # DATA_GRID_CROPS = "germany/CM_2017-2019_WR_1000m_25832_q3.asc"  # winter rapeseed
 # TEMPLATE_PATH_LATLON = "{path_to_climate_dir}/latlon-to-rowcol.json"
 # TEMPLATE_PATH_LATLON = "data/climate/Mitteldeutsches Kernensemble/111/latlon-to-id-111.json"
@@ -90,7 +90,8 @@ TEMPLATE_PATH_LATLON = "data/climate/{region_name}/latlon-to-id-{region_name}-{r
 TEMPLATE_PATH_CLIMATE_CSV = "{region_name}/{gcm}/{rcm}/{scenario}/{ensmem}/{version}/{vg_climate_id}.csv"
 
 # Additional data for masking the regions
-VG_REGIONS = "data/germany/Vergleichsgebiete_25832.shp"
+# VG_REGIONS = "data/germany/Vergleichsgebiete_25832.shp"
+VG_REGIONS = "data/germany/NUTS250_N1.shp"
 
 TEMPLATE_PATH_HARVEST = "{path_to_data_dir}/projects/monica-germany/ILR_SEED_HARVEST_doys_{crop_id}.csv"
 
@@ -117,10 +118,12 @@ def haversine_distance(coord1, coord2):
     return R * c  # distance in km
 
 def get_vg_climate_id(region_name, lat, lon, paths, gcm, rcm):
-    interpolator_csv = "region_to_climate_interpolator.csv"
+    # interpolator_csv = "region_to_climate_interpolator.csv"
+    interpolator_csv = "region_to_climate_interpolator-sachsen.csv"
     df = pd.read_csv(interpolator_csv)
 
-    match = df[(df["vgl_nr"] == int(region_name)) & (df["gcm"] == gcm) & (df["rcm"] == rcm)]
+    # match = df[(df["vgl_nr"] == int(region_name)) & (df["gcm"] == gcm) & (df["rcm"] == rcm)]
+    match = df[(df["nuts_name"] == region_name) & (df["gcm"] == gcm) & (df["rcm"] == rcm)]
 
     if match.empty:
         raise ValueError(f"No matching entry found for vgl_nr={int(region_name)}, gcm={gcm}, rcm={rcm}")
@@ -142,7 +145,6 @@ def get_vg_climate_id(region_name, lat, lon, paths, gcm, rcm):
         lat2, lon2 = coord
         climate_id = climate_id_list[0]
 
-        # dist = haversine((lat, lon), (lat2, lon2))
         dist = haversine_distance((lat, lon), (lat2, lon2))
 
         if dist < min_dist:
@@ -167,7 +169,7 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
         "sim.json": "sim_projection_mdk_globrad.json",
         "crop.json": "crop.json",
         "site.json": "site.json",
-        "setups-file": "sim_setups_mdk.csv",
+        "setups-file": "sim_setups_mdk-sachsen.csv",
         "run-setups": "[1]",
         "shared_id": shared_id
     }
@@ -262,8 +264,9 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
 
     def create_mask_from_shapefile(VG_REGIONS, region_name, path_to_soil_grid):
         regions_df = gpd.read_file(VG_REGIONS)
-        region_name = int(region_name)
-        region = regions_df[regions_df["VG_NR"] == region_name]
+        # region_name = int(region_name)
+        # region = regions_df[regions_df["VG_NR"] == region_name]
+        region = regions_df[regions_df["NUTS_NAME"] == region_name]
 
         # This is needed to read the transformation data correctly from the file. With the original opening it does not work
         with rasterio.open(path_to_soil_grid) as dataset:
