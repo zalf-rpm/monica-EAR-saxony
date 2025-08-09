@@ -43,10 +43,7 @@
 				["CM-count", "FIRST"],
 				["Year", "LAST"],
 				["Crop", "FIRST"],
-				["Yield", "LAST"],
-				["Evapotranspiration", "SUM"],
-				["Act_ET", "SUM"],
-				["Pot_ET", "SUM"]
+				["Yield", "LAST"]
 			]
 		]
 	},
