@@ -396,7 +396,7 @@
         "GV": [{
 			"worksteps": [
 				{
-					"date": "2020-10-01", "type": "Sowing", "crop": ["ref", "crops", "GV"]
+					"date": "1990-10-01", "type": "Sowing", "crop": ["ref", "crops", "GV"]
 				}
             ]
 		},
@@ -424,7 +424,7 @@
         "AP": [{
 			"worksteps": [
 				{
-					"date": "2020-10-01", "type": "Sowing", "crop": ["ref", "crops", "AP"]
+					"date": "1990-10-01", "type": "Sowing", "crop": ["ref", "crops", "AP"]
 				}
             ]
 		},
