@@ -76,7 +76,7 @@
   "SamplingDepth":0.89999997615814209,
   "SpeciesName":"apple",
   "SpecificRootLength":300,
-  "StageAfterCut":0,
+  "StageAfterCut":1,
   "StageAtMaxDiameter":1,
   "StageAtMaxHeight":1,
   "StageMaxRootNConcentration":[  
