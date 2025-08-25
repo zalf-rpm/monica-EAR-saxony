@@ -48,13 +48,20 @@
 				["Act_ET", "SUM"],
 				["Pot_ET", "SUM"]
 			],
-            "daily", [
+            "_daily", [
               "Date",
               "Crop",
               "Stage",
               "TempSum",
               "AbBiom",
               "Tmin"
+            ],
+            "monthly", [
+              ["CM-count", "FIRST"],
+              ["Year", "LAST"],
+              ["Month", "LAST"],
+              ["Crop", "FIRST"],
+              ["TraDef", "AVG"]
           ]
 		]
 	},

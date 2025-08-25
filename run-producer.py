@@ -28,6 +28,8 @@ import zmq
 import geopandas as gpd
 import rasterio
 from rasterio import features
+from rasterio.features import rasterize
+from rasterio.transform import from_origin
 
 import monica_io3
 import soil_io3
@@ -78,8 +80,8 @@ DATA_GRID_HEIGHT = "germany/dem_1000_25832_etrs89-utm32n.asc"
 DATA_GRID_SLOPE = "germany/slope_1000_25832_etrs89-utm32n.asc"
 DATA_GRID_LAND_USE = "germany/landuse_1000_31469_gk5.asc"
 DATA_GRID_SOIL = "germany/buek200_1000_25832_etrs89-utm32n.asc"
-# DATA_GRID_CROPS = "germany/CM_2017-2019_WW_1000m_25832_q3.asc"  # winter wheat
-DATA_GRID_CROPS = "germany/CM_2017-2019_SM_1000m_25832_q3.asc"  # silage maize
+DATA_GRID_CROPS = "germany/CM_2017-2019_WW_1000m_25832_q3.asc"  # winter wheat
+# DATA_GRID_CROPS = "germany/CM_2017-2019_SM_1000m_25832_q3.asc"  # silage maize
 # DATA_GRID_CROPS = "germany/CM_2017-2019_WR_1000m_25832_q3.asc"  # winter rapeseed
 TEMPLATE_PATH_LATLON = "{path_to_climate_dir}/latlon-to-rowcol.json"
 # TEMPLATE_PATH_LATLON = "data/latlon-to-rowcol.json"
@@ -89,11 +91,17 @@ TEMPLATE_PATH_CLIMATE_CSV = "{gcm}/{rcm}/{scenario}/{ensmem}/{version}/{crow}/da
 # Additional data for masking the regions
 # NUTS3_REGIONS = "data/germany/NUTS_RG_03M_25832.shp"
 NUTS1_REGIONS = "data/germany/NUTS250_N1.shp"
+VG_REGIONS = "data/germany/Vergleichsgebiete_25832.shp"
 
 TEMPLATE_PATH_HARVEST = "{path_to_data_dir}/projects/monica-germany/ILR_SEED_HARVEST_doys_{crop_id}.csv"
 
 # gdf = gpd.read_file(NUTS3_REGIONS)
-gdf = gpd.read_file(NUTS1_REGIONS)
+# gdf = gpd.read_file(NUTS1_REGIONS)
+nuts1_gdf = gpd.read_file(NUTS1_REGIONS)
+gdf = gpd.read_file(VG_REGIONS)
+
+gdf["VG_NR_INT"] = gdf["VG_Name"].astype("category").cat.codes
+vg_lookup = dict(zip(gdf["VG_NR_INT"], gdf["VG_Name"]))
 
 DEBUG_DONOT_SEND = False
 DEBUG_WRITE = False
@@ -109,15 +117,15 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
 
     config = {
         "mode": "re-local-remote",  # "mbm-local-remote",
-        "server-port": server["port"] if server["port"] else "6667",
+        "server-port": server["port"] if server["port"] else "6669",
         "server": server["server"] if server["server"] else "login01.cluster.zalf.de",
         "start-row": "0",
         "end-row": "-1",
         "path_to_dem_grid": "",
-        "sim.json": "sim.json",
+        "sim.json": "sim_hist.json",
         "crop.json": "crop.json",
         "site.json": "site.json",
-        "setups-file": "sim_setups.csv",
+        "setups-file": "sim_setups_hist.csv",
         "run-setups": "[1]",
         "shared_id": shared_id
     }
@@ -335,6 +343,11 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
         # cs__ = open("coord_mapping_etrs89-utm32n_to_wgs84-latlon.csv", "w")
         # cs__.write("row,col,center_25832_etrs89-utm32n_r,center_25832_etrs89-utm32n_h,center_lat,center_lon\n")
 
+        # Rasterize VG regions shapefile
+        transform = from_origin(xllcorner, yllcorner + srows * scellsize, scellsize, scellsize)
+        vg_raster = rasterize(((geom, value) for geom, value in zip(gdf.geometry, gdf["VG_NR_INT"])),
+                              out_shape=(srows, scols), transform=transform, fill=nodata_value, dtype='int32')
+
         for srow in range(0, srows):
             print(srow, end=", ")
 
@@ -353,6 +366,10 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
                 sr = xllcorner + (scellsize / 2) + scol * scellsize
                 # inter = crow/ccol encoded into integer
                 crow, ccol = climate_data_interpolator(sr, sh)
+
+                # Get the VG region code for the current grid cell
+                vg_id = int(vg_raster[srow, scol])
+                vg_name = vg_lookup[vg_id] if vg_id != nodata_value else None
 
                 crop_grid_id = int(crop_grid[srow, scol])
                 # print(crop_grid_id)
@@ -401,6 +418,9 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
 
                 # set external seed/harvest dates
                 if seed_harvest_cs:
+                    if isinstance(seed_harvest_cs, np.ndarray):
+                        seed_harvest_cs = seed_harvest_cs.item() if seed_harvest_cs.size == 1 else tuple(
+                            seed_harvest_cs)
                     seed_harvest_data = ilr_seed_harvest_data[crop_id_short]["data"][seed_harvest_cs]
                     if seed_harvest_data:
                         is_winter_crop = ilr_seed_harvest_data[crop_id_short]["is-winter-crop"]
@@ -629,7 +649,7 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
                 env_template["csvViaHeaderOptions"] = sim_json["climate.csv-options"]
 
                 subpath_to_csv = TEMPLATE_PATH_CLIMATE_CSV.format(gcm=gcm, rcm=rcm, scenario=scenario, ensmem=ensmem,
-                                                                  version=version, crow=str(crow), ccol=str(ccol))
+                                                                  version=version, crow=int(crow), ccol=int(ccol))
                 for _ in range(4):
                     subpath_to_csv = subpath_to_csv.replace("//", "/")
                 env_template["pathToClimateCSV"] = [
@@ -673,7 +693,8 @@ def run_producer(server={"server": None, "port": None}, shared_id=None):
                     "crow": int(crow), "ccol": int(ccol),
                     "soil_id": soil_id,
                     "env_id": sent_env_count,
-                    "nodata": False
+                    "nodata": False,
+                    "vg": vg_name
                 }
 
                 print("Harvest type:", setup["harvest-date"])
