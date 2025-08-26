@@ -39,12 +39,19 @@
 
 		
 		"events": [
-			"crop", [
+			"_crop", [
 				["CM-count", "FIRST"],
 				["Year", "LAST"],
 				["Crop", "FIRST"],
 				["Yield", "LAST"]
-			]
+			],
+            "monthly", [
+              ["CM-count", "FIRST"],
+              ["Year", "LAST"],
+              ["Month", "LAST"],
+              ["Crop", "FIRST"],
+              ["TraDef", "AVG"]
+            ]
 		]
 	},
 
