@@ -95,11 +95,10 @@ def create_output(msg):
     if saw_monthly:
         for (cmc, year), buckets in monthly_data.items():
             tra_map = buckets["TraDef"]
-            tra_list = [tra_map.get(m, -9999) for m in range(1, 13)]
+            tra_list = [tra_map.get(m, 0.0) for m in range(1, 13)]
             if "Year" not in cm_count_to_vals[cmc]:
                 cm_count_to_vals[cmc]["Year"] = year
             cm_count_to_vals[cmc]["TraDef_monthly"] = tra_list
-            # ensure Crop exists
             if "Crop" not in cm_count_to_vals[cmc] and cmc in last_crop_by_cmc:
                 cm_count_to_vals[cmc]["Crop"] = last_crop_by_cmc[cmc]
 
@@ -120,7 +119,7 @@ def write_row_to_grids(row_col_data, row, ncols, header, path_to_output_dir, pat
         write_row_to_grids.nodata_row_count = defaultdict(lambda: 0)
         write_row_to_grids.list_of_output_files = defaultdict(list)
 
-    make_dict_nparr = lambda: defaultdict(lambda: np.full((ncols,), -9999, dtype=np.float))
+    make_dict_nparr = lambda: defaultdict(lambda: np.full((ncols,), -9999, dtype=float))
 
     output_grids = {
         "TraDef_monthly": {"data": make_dict_nparr(), "cast-to": "float", "digits": 5},
