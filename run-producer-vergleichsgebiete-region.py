@@ -130,7 +130,7 @@ def get_vg_climate_id(region_name, lat, lon, paths, gcm, rcm):
 
     json_path = match.iloc[0]["path_to_latlon_id"]
 
-    json_path = os.path.join(paths["path-to-climate-dir"], "mdk_ear_saxony", region_name, json_path)
+    json_path = os.path.join(paths["monica-path-to-climate-dir"], "mdk_ear_saxony", region_name, json_path)
     # json_path = os.path.join(paths["path-to-data-dir"], "climate", "Mitteldeutsches Kernensemble", region_name,
     #                          json_path)
 
