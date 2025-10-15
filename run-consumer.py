@@ -81,10 +81,10 @@ def write_row_to_grids(row_col_data, row, ncols, header, path_to_output_dir, pat
     make_dict_nparr = lambda: defaultdict(lambda: np.full((ncols,), -9999, dtype=np.float))
 
     output_grids = {
-        "Yield": {"data": make_dict_nparr(), "cast-to": "float", "digits": 1},
-        "Evapotranspiration": {"data": make_dict_nparr(), "cast-to": "float", "digits": 1},
-        "Act_ET": {"data": make_dict_nparr(), "cast-to": "float", "digits": 1},
-        "Pot_ET": {"data": make_dict_nparr(), "cast-to": "float", "digits": 1}
+        "Yield": {"data": make_dict_nparr(), "cast-to": "float", "digits": 2},
+        # "Evapotranspiration": {"data": make_dict_nparr(), "cast-to": "float", "digits": 1},
+        # "Act_ET": {"data": make_dict_nparr(), "cast-to": "float", "digits": 1},
+        # "Pot_ET": {"data": make_dict_nparr(), "cast-to": "float", "digits": 1}
     }
     output_keys = list(output_grids.keys())
 
@@ -225,7 +225,7 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
     socket.connect("tcp://" + config["server"] + ":" + config["port"])
     socket.RCVTIMEO = config["timeout"]
     leave = False
-    write_normal_output_files = True
+    write_normal_output_files = False
 
     path_to_soil_grid = TEMPLATE_SOIL_PATH.format(local_path_to_data_dir=paths["path-to-data-dir"])
     soil_epsg_code = int(path_to_soil_grid.split("/")[-1].split("_")[2])
@@ -260,7 +260,7 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
                 sh = yllcorner + (scellsize / 2) + (srows - srow - 1) * scellsize
                 sr = xllcorner + (scellsize / 2) + scol * scellsize
 
-                # check if current grid cell is used for agriculture                
+                # check if current grid cell is used for agriculture
                 lur, luh = landuse_transformer(sh, sr)
                 landuse_id = landuse_interpolate(lur, luh)
                 if landuse_id not in [2, 3, 4]:
@@ -391,12 +391,10 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
             # crow = custom_id.get("crow", -1)
             # ccol = custom_id.get("ccol", -1)
             # soil_id = custom_id.get("soil_id", -1)
-            vg = custom_id["vg"]
 
             process_message.wnof_count += 1
 
-            # path_to_out_dir = config["out"] + str(setup_id) + "/" + str(row) + "/"
-            path_to_out_dir = os.path.join(config["csv-out"] + str(setup_id) + "/" + vg + "/" + str(row) + "/")
+            path_to_out_dir = config["out"] + str(setup_id) + "/" + str(row) + "/"
             print(path_to_out_dir)
             if not os.path.exists(path_to_out_dir):
                 try:
@@ -406,7 +404,7 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
                     exit(1)
 
             # with open("out/out-" + str(i) + ".csv", 'wb') as _:
-            with open(path_to_out_dir + "col-" + str(col) + ".csv", "w", newline='', encoding='utf-8') as _:
+            with open(path_to_out_dir + "col-" + str(col) + ".csv", "w", newline='') as _:
 
                 writer = csv.writer(_, delimiter=",")
                 for data_ in msg.get("data", []):
@@ -424,7 +422,6 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
 
                         # for row in monica_io3.write_output(output_ids, results):
                         #     writer.writerow(row)
-
                         for result in results:
                             row = []
                             for output_id in output_ids:
@@ -432,7 +429,7 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
                                 row.append(result.get(field_name, ""))
                             writer.writerow(row)
 
-                    writer.writerow([])
+                writer.writerow([])
 
             process_message.received_env_count = process_message.received_env_count + 1
 
