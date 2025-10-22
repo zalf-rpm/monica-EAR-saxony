@@ -85,8 +85,8 @@ DATA_GRID_CROPS = "germany/CM_2017-2019_WW_1000m_25832_q3.asc"  # winter wheat
 # DATA_GRID_CROPS = "germany/CM_2017-2019_WR_1000m_25832_q3.asc"  # winter rapeseed
 TEMPLATE_PATH_LATLON = "{path_to_climate_dir}/latlon-to-rowcol.json"
 # TEMPLATE_PATH_LATLON = "data/latlon-to-rowcol.json"
-# TEMPLATE_PATH_CLIMATE_CSV = "{gcm}/{rcm}/{scenario}/{ensmem}/{version}/row-{crow}/col-{ccol}.csv"
-TEMPLATE_PATH_CLIMATE_CSV = "{gcm}/{rcm}/{scenario}/{ensmem}/{version}/{crow}/daily_mean_RES1_C{ccol}R{crow}.csv.gz"
+TEMPLATE_PATH_CLIMATE_CSV = "{gcm}/{rcm}/{scenario}/{ensmem}/{version}/row-{crow}/col-{ccol}.csv"  # climate projection
+# TEMPLATE_PATH_CLIMATE_CSV = "{gcm}/{rcm}/{scenario}/{ensmem}/{version}/{crow}/daily_mean_RES1_C{ccol}R{crow}.csv.gz"  # historical
 
 # Additional data for masking the regions
 # NUTS3_REGIONS = "data/germany/NUTS_RG_03M_25832.shp"
