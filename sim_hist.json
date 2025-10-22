@@ -39,14 +39,11 @@
 
 		
 		"events": [
-			"_crop", [
+			"crop", [
 				["CM-count", "FIRST"],
 				["Year", "LAST"],
 				["Crop", "FIRST"],
-				["Yield", "LAST"],
-				["Evapotranspiration", "SUM"],
-				["Act_ET", "SUM"],
-				["Pot_ET", "SUM"]
+				["Yield", "LAST"]
 			],
             "_daily", [
               "Date",
@@ -56,7 +53,7 @@
               "AbBiom",
               "Tmin"
             ],
-            "monthly", [
+            "_monthly", [
               ["CM-count", "FIRST"],
               ["Year", "LAST"],
               ["Month", "LAST"],

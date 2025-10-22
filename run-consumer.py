@@ -78,7 +78,7 @@ def write_row_to_grids(row_col_data, row, ncols, header, path_to_output_dir, pat
         write_row_to_grids.nodata_row_count = defaultdict(lambda: 0)
         write_row_to_grids.list_of_output_files = defaultdict(list)
 
-    make_dict_nparr = lambda: defaultdict(lambda: np.full((ncols,), -9999, dtype=np.float))
+    make_dict_nparr = lambda: defaultdict(lambda: np.full((ncols,), -9999, dtype=float))
 
     output_grids = {
         "Yield": {"data": make_dict_nparr(), "cast-to": "float", "digits": 2},
@@ -192,7 +192,7 @@ def run_consumer(leave_after_finished_run=True, server={"server": None, "port": 
 
     config = {
         "mode": "re-local-remote",  # "mbm-local-remote",
-        "port": server["port"] if server["port"] else "7780",
+        "port": server["port"] if server["port"] else "7778",
         "server": server["server"] if server["server"] else "login01.cluster.zalf.de",
         "start-row": "0",
         "end-row": "-1",
