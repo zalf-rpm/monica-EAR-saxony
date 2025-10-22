@@ -39,7 +39,7 @@
 
 		
 		"events": [
-			"crop", [
+			"_crop", [
 				["CM-count", "FIRST"],
 				["Year", "LAST"],
 				["Crop", "FIRST"],
@@ -53,7 +53,7 @@
               "AbBiom",
               "Tmin"
             ],
-            "_monthly", [
+            "monthly", [
               ["CM-count", "FIRST"],
               ["Year", "LAST"],
               ["Month", "LAST"],
