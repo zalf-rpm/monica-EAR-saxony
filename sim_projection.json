@@ -46,7 +46,8 @@
 				["Yield", "LAST"],
 				["Evapotranspiration", "SUM"],
 				["Act_ET", "SUM"],
-				["Pot_ET", "SUM"],
+				["Pot_ET", "SUM"]
+			],
             "monthly", [
               ["CM-count", "FIRST"],
               ["Year", "LAST"],
@@ -54,7 +55,6 @@
               ["Crop", "FIRST"],
               ["TraDef", "AVG"]
             ]
-			]
 		]
 	},
 
